@@ -32,8 +32,20 @@ $statement->execute();
 //Changing the results into objects for ease of use
 $dvds = $statement->fetchAll(PDO::FETCH_OBJ);
 
+//Printing out what user searched for
+echo "You searched for '" .$_GET['dvd_title']. "': <br>";
+
+//If no results
+if (empty($dvds)) {
+    echo 'No results found <br>';
+    echo "<a href='http://localhost:8000/index.php'>";
+    echo "Search again";
+    echo "</a>";
+}
+
 //End of PHP
 ?>
+
 
 <!-- Displaying results-->
 <?php foreach ($dvds as $dvd) : ?>
