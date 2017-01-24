@@ -43,6 +43,11 @@ if (empty($dvds)) {
     echo "</a>";
 }
 
+//If a user navigates to dvds.php directly, redirect back index.php
+if ($_GET['dvd_title']==""){
+  header('Location: index.php');
+}
+
 //End of PHP
 ?>
 
